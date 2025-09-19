@@ -77,7 +77,7 @@ To add support for a new input file format, follow these steps:
 1. **Create a new adapter class** in `src/adapters/`, e.g., `NewFormatAdapter.ts`.
 2. **Extend `BaseAdapter`** and implement the required methods:
 	- `isValid(fileContent: Buffer): boolean` — Detects if the adapter can process the input file.
-	- `getIntervalLength(rows: ParsedRow[] | Buffer): number` — Returns the interval length in minutes.
+	- `getIntervalLength(fileContent: Buffer): number` — Returns the interval length in minutes.
 	- `parseRows(fileContent: Buffer): ParsedRow[]` — Parses the input file and returns an array of `ParsedRow` objects.
 3. **Register your adapter**  
 	 To make your adapter available for detection and conversion, add it to the `adapters` array in `src/nem12/convert.ts`. For example:

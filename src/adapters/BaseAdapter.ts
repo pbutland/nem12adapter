@@ -17,7 +17,7 @@ export abstract class BaseAdapter implements Adapter {
    * Determines interval length (in minutes) from `fileContent`.
    * Returns interval length in minutes, or throws if inconsistent or not found.
    */
-  abstract getIntervalLength(rows: ParsedRow[] | Buffer): number;
+  abstract getIntervalLength(fileContent: Buffer): number;
 
   /**
    * Assembles the Nem12File object from parsed rows and interval length.
